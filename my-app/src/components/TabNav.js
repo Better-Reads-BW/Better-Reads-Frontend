@@ -12,9 +12,18 @@ const createLabel = (iconName, labelText) => (
 );
 
 const welcomeLabel = createLabel("home", "Home Page");
+const signinLabel = createLabel("signin", "Signin Page");
+const signupLabel = createLabel("signup", "SignUp Page");
+
 const panes = [
   {
     menuItem: <Menu.Item key="home" as={Nav} to={`/`} content={welcomeLabel} />
+  },
+  {
+    menuItem: <Menu.Item key="signup" as={Nav} to={"/"} content={signupLabel} />
+  },
+  {
+    menuItem: <Menu.Item key="signin" as={Nav} to={"/"} content={signinLabel} />
   }
 ];
 const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />;

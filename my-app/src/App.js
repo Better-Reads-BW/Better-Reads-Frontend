@@ -1,13 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import "./WelcomePage.js";
+import "./components/WelcomePage.js";
+import TabNav from "./components/TabNav.js";
+import SearchForm from "./components/SearchForm.js";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-
+        <TabNav />
+        <SearchForm />
       </header>
     </div>
   );
