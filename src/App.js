@@ -13,7 +13,7 @@ export default function App() {
     <main>
       <TabNav />
       <Route exact path = '/' component = {StartPage} />
-      <Route path = '/booklist' component = {BookList}/>
+      <Route exact path = '/booklist' component = {BookList}/>
       <Route exact path = '/searchform' component = {FormikSearchForm} />
       
     </main>

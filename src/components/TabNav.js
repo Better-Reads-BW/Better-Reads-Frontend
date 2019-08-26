@@ -10,15 +10,15 @@ export default function TabNav(){
     <Menu>
         <Menu.Item name = 'Home' as={NavLink} to='/' active={StartPage}>
             <Icon name= 'home' />
-            <div>Home Page</div>
+            <div>Home</div>
         </Menu.Item>
-        <Menu.Item name = 'login' as={NavLink} to='/login' active={BookList}>
+        <Menu.Item name = 'booklist' as={NavLink} to='/booklist' active={BookList}>
             <Icon name= 'users' />
             <div>Sample Books</div>
         </Menu.Item>
         <Menu.Item name = 'search' as={NavLink} to='/searchform' active={FormikSearchForm}>
-            <Icon name = 'map' />
-            <div>Locations</div>
+            <Icon name = 'book' />
+            <div>Find Books</div>
         </Menu.Item>
         
     </Menu>

@@ -6,8 +6,6 @@ export default function StartPage() {
     <section className="start-page">
       <header>
         <h1>Welcome to Better Reads!</h1>
-        <FormikSearchForm />
-        />
       </header>
     </section>
   );

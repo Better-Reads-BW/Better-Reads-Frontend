@@ -3,7 +3,7 @@ import axios from "axios";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 
-const SearchForm = ({ errors, touched, values, status }) => {
+const SearchForm = ({ errors, touched, status }) => {
   const [info, setInfo] = useState([]);
   console.log("this is touched", touched);
   useEffect(() => {
@@ -13,7 +13,7 @@ const SearchForm = ({ errors, touched, values, status }) => {
   }, [status]);
 
   return (
-    <div className="search-box">
+    <div className="search-form">
       <h1>What kind of book are you looking for?</h1>
       <Form>
         
@@ -30,6 +30,12 @@ const SearchForm = ({ errors, touched, values, status }) => {
         <button type="submit">Submit!</button>
       </Form>
 
+      {/* {info.map (desc => {
+        <ul key={desc.id}>
+          <li>Search Request: {desc.bookdesc}</li>
+        </ul>
+      })} */}
+
       
     </div>
   );
@@ -40,13 +46,12 @@ const FormikSearchForm = withFormik({
 
   mapPropsToValues({  bookdesc }) {
     return {
-     
       booksdesc: bookdesc || ""
     };
   },
 
   validationSchema: Yup.object().shape({
-    notes: Yup.string().required('A description is required.')
+    bookdesc: Yup.string().required('A description is required.')
   }),
 
   handleSubmit(values, { setStatus }) {
