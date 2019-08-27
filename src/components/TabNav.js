@@ -4,9 +4,16 @@ import { NavLink } from "react-router-dom";
 import BookList from "./BookList";
 import FormikSearchForm from "./SearchForm";
 import StartPage from './StartPage';
+import styled from 'styled-components';
+
+
+const NavBar = styled.div`
+background-color: #f4f1ea;
+`;
 
 export default function TabNav(){
     return (
+    <NavBar>
     <Menu>
         <Menu.Item name = 'Home' as={NavLink} to='/' active={StartPage}>
             <Icon name= 'home' />
@@ -22,6 +29,7 @@ export default function TabNav(){
         </Menu.Item>
         
     </Menu>
+    </NavBar>
 
     )
 }

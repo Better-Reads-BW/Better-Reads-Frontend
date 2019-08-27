@@ -6,16 +6,22 @@ import {Route} from 'react-router-dom';
 import FormikSearchForm from './components/SearchForm';
 import TabNav from './components/TabNav';
 import StartPage from './components/StartPage';
+import styled from 'styled-components';
+
+const AppDiv = styled.main`
+background-color: #f9f7f4;
+`;
 
 
 export default function App() {
   return (
     <main>
       <TabNav />
+      <AppDiv>
       <Route exact path = '/' component = {StartPage} />
       <Route exact path = '/booklist' component = {BookList}/>
       <Route exact path = '/searchform' component = {FormikSearchForm} />
-      
+      </AppDiv>
     </main>
   );
 }

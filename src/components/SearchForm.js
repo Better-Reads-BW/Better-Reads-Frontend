@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Form, Field, withFormik } from "formik";
+import BookList from './BookList';
 import * as Yup from "yup";
+import styled from 'styled-components';
 
-const SearchForm = ({ errors, touched, status }) => {
+
+
+
+const SearchForm = ({ errors, touched, values, isSubmitting, status }) => {
   const [info, setInfo] = useState([]);
   console.log("this is touched", touched);
   useEffect(() => {
     if (status) {
       setInfo([...info, status]);
     }
-  }, [status]);
+  }, [info, status]);
 
   return (
     <div className="search-form">
@@ -22,19 +27,14 @@ const SearchForm = ({ errors, touched, status }) => {
           type="text"
           name="bookdesc"
           placeholder="Book Description"
+          min-width='500px'
         />
-        {touched.bookdesc && errors.booksdesc && (
-          <p className="error">{errors.bookdesc}</p>
-        )}
+        {touched.bookdesc && errors.booksdesc &&  <p>{errors.bookdesc}</p>}
 
-        <button type="submit">Submit!</button>
+        <button type="submit" disabled = {isSubmitting}>Submit!</button>
       </Form>
 
-      {/* {info.map (desc => {
-        <ul key={desc.id}>
-          <li>Search Request: {desc.bookdesc}</li>
-        </ul>
-      })} */}
+      <BookList />
 
       
     </div>
@@ -54,14 +54,20 @@ const FormikSearchForm = withFormik({
     bookdesc: Yup.string().required('A description is required.')
   }),
 
-  handleSubmit(values, { setStatus }) {
+  handleSubmit(values, { setStatus, resetForm, setErrors, setSubmitting }) {
     axios
       
       .post("https://reqres.in/api/users/", values)
       .then(res => {
-        setStatus(res.data);
+        console.log(res)
+        setStatus(res.data)
+        resetForm();
+        setSubmitting(false);
       })
-      .catch(err => console.log(err.response));
-  }
+      .catch(err => {
+        console.log(err);
+        setSubmitting(false)
+      });
+    }
 })(SearchForm);
 export default FormikSearchForm;

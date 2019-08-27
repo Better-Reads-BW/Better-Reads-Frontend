@@ -1,5 +1,5 @@
 import React from "react";
-import FormikSearchForm from "./SearchForm";
+
 
 export default function StartPage() {
   return (
