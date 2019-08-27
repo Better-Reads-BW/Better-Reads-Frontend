@@ -1,6 +1,4 @@
 import React from "react";
-// import TabNav from "./components/TabNav.js";
-// import Header from "./components/Header.js";
 import BookList from './components/BookList';
 import {Route} from 'react-router-dom';
 import FormikSearchForm from './components/SearchForm';
@@ -25,5 +23,3 @@ export default function App() {
     </main>
   );
 }
-
-

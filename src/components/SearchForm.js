@@ -5,7 +5,12 @@ import BookList from './BookList';
 import * as Yup from "yup";
 import styled from 'styled-components';
 
+const SearchDiv = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
 
+`;
 
 
 const SearchForm = ({ errors, touched, values, isSubmitting, status }) => {
@@ -18,7 +23,7 @@ const SearchForm = ({ errors, touched, values, isSubmitting, status }) => {
   }, [info, status]);
 
   return (
-    <div className="search-form">
+    <SearchDiv>
       <h1>What kind of book are you looking for?</h1>
       <Form>
         
@@ -31,13 +36,15 @@ const SearchForm = ({ errors, touched, values, isSubmitting, status }) => {
         />
         {touched.bookdesc && errors.booksdesc &&  <p>{errors.bookdesc}</p>}
 
-        <button type="submit" disabled = {isSubmitting}>Submit!</button>
+        
       </Form>
+
+      <button type="submit" disabled = {isSubmitting}>Submit!</button>
 
       <BookList />
 
       
-    </div>
+    </SearchDiv>
   );
 };
 

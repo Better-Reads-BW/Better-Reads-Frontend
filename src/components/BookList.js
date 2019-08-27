@@ -3,6 +3,11 @@ import axios from "axios";
 import BookCard from './BookCard';
 import { Grid, Container as SemanticContainer } from 'semantic-ui-react';
 import styled from 'styled-components';
+
+const BookH1 = styled.h1`
+text-align: center;
+
+`;
  
 
 
@@ -28,6 +33,7 @@ export default function BookList() {
   return (
     
     <SemanticContainer>
+      <BookH1>Here are Books You Might Enjoy:</BookH1>
       <Grid relaxed columns={3}>
         <Grid.Row padded='vertically' columns={3}>
           {books.map(newBook => {
