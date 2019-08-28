@@ -24,19 +24,20 @@ const SearchForm = ({ errors, touched, values, isSubmitting, status }) => {
 
   return (
     <SearchDiv>
-      <h1>What kind of book are you looking for?</h1>
+      <h1>Search by Author</h1>
+      
       <Form>
+      
         
         <Field
-          component="textarea"
-          type="text"
-          name="bookdesc"
-          placeholder="Book Description"
-          min-width='500px'
+          type="author"
+          name="author"
+          placeholder="Author Name"
+          
         />
         {touched.bookdesc && errors.booksdesc &&  <p>{errors.bookdesc}</p>}
 
-        
+
       </Form>
 
       <button type="submit" disabled = {isSubmitting}>Submit!</button>
@@ -51,14 +52,15 @@ const SearchForm = ({ errors, touched, values, isSubmitting, status }) => {
 
 const FormikSearchForm = withFormik({
 
-  mapPropsToValues({  bookdesc }) {
+  mapPropsToValues({  author }) {
     return {
-      booksdesc: bookdesc || ""
+      author: author || ""
+     
     };
   },
 
   validationSchema: Yup.object().shape({
-    bookdesc: Yup.string().required('A description is required.')
+    author: Yup.string().required('An author name is required')
   }),
 
   handleSubmit(values, { setStatus, resetForm, setErrors, setSubmitting }) {
