@@ -6,11 +6,12 @@ import styled from 'styled-components';
 
 const BookH1 = styled.h1`
 text-align: center;
+padding: 5% 0 0 0;
 `;
 
 const ListDiv = styled.div`
 display: flex;
-padding: 0 0 0 10%;
+padding: 0 0 0 5%;
 
 `;
  

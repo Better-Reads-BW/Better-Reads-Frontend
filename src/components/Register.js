@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
+
 const FormP = styled.p`
 text-align: center;
 font-size: 20px;
@@ -11,6 +12,7 @@ const FormDiv = styled.div`
 display: flex;
 justify-content: center;
 `;
+
 
 function Register(props) {
   const [email, setEmail] = useState('');
@@ -52,7 +54,11 @@ function Register(props) {
       />
       <button type="submit">Submit</button>
     </form>
+
     </FormDiv>
+    
+    
+    
   );
 }
 

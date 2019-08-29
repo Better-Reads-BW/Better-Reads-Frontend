@@ -9,6 +9,11 @@ margin: 20px;
 padding: 20px;
 `;
 
+const ImageDiv = styled.h1`
+margin: 10% 0 0 0;
+
+`;
+
 
 
 
@@ -19,8 +24,9 @@ export default function StartPage() {
     <section className="start-page">
       
         <BRH1>Welcome to Better Reads!</BRH1>
+        <ImageDiv>
         <Image src={books} size='large' circular centered />
-      
+        </ImageDiv>
     </section>
   );
 }
