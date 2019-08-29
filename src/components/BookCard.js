@@ -3,9 +3,7 @@ import { Card, Grid } from 'semantic-ui-react';
 import styled from 'styled-components';
 
 const CardDiv = styled.div`
-
-// border: 1px solid black;
-
+border-radius: 25% 10%;
 margin: 10px;
 `;
 
@@ -13,8 +11,9 @@ margin: 10px;
 export default function BookCard(props) {
   
   return (
-    <CardDiv>
+    
     <Grid.Column padded='horizontally' key={props.id}>
+      <CardDiv>
       <Card>
         <Card.Content>
           <Card.Header>{props.title}</Card.Header>
@@ -22,7 +21,8 @@ export default function BookCard(props) {
           <Card.Description>Description: {props.description}</Card.Description>
         </Card.Content>
       </Card>
+      </CardDiv>
     </Grid.Column>
-    </CardDiv>
+    
   )
 }
