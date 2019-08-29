@@ -6,6 +6,7 @@ import FormikSearchForm from "./SearchForm";
 import StartPage from './StartPage';
 import styled from 'styled-components';
 import FormikSignUpForm from './SignupForm'
+import Register from './Register'
 
 
 const NavBar = styled.div`
@@ -30,9 +31,9 @@ export default function TabNav(){
             <Icon name = 'book' />
             <div>Find Books</div>
         </Menu.Item>
-        <Menu.Item name = 'signup' as={NavLink} to= '/signup' active ={FormikSignUpForm}>
-            <Icon name = 'signup' />
-            <div>Login/Signup</div>
+        <Menu.Item name = 'register' as={NavLink} to= '/register' active ={Register}>
+            <Icon name = 'register' />
+            <div>Register</div>
         </Menu.Item>
         
     </Menu>

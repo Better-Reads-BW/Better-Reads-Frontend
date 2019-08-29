@@ -125,8 +125,6 @@ validationSchema: Yup.object().shape({
 }),
 handleSubmit(values, {resetForm, setStatus, setSubmitting}) {
 
-
-    
         axios
         .post("https://reqres.in/api/users", values)
         .then(res => {

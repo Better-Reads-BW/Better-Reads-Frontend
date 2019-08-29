@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { tsPropertySignature } from '@babel/types';
 
-function Login(props) {
+function Register(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    const baseURL = 'https://ilovelambda.herokuapp.com/api/';
+    const baseURL = 'https://ilovelambda.herokuapp.com/api';
     axios
-      .post(`${baseURL}auth/login`, { username: email, password })
+      .post(`${baseURL}/auth/register`, { username: email, password })
       .then(res => {
         console.log(res);
         localStorage.setItem('token', res.data.token);
-        props.history.push('/booklist');
+        props.history.push("/login")
+    
       })
       .catch(err => {
         console.log(err);
@@ -23,7 +23,7 @@ function Login(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>Login</p>
+      <p>Register</p>
       <input
         value={email}
         name="email"
@@ -43,4 +43,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default Register;
