@@ -6,6 +6,11 @@ import styled from 'styled-components';
 
 const BookH1 = styled.h1`
 text-align: center;
+`;
+
+const ListDiv = styled.div`
+display: flex;
+padding: 0 0 0 10%;
 
 `;
  
@@ -34,6 +39,7 @@ export default function BookList() {
     
     <SemanticContainer>
       <BookH1>Here are Books You Might Enjoy:</BookH1>
+      <ListDiv>
       <Grid relaxed columns={3}>
         <Grid.Row padded='vertically' columns={3}>
           {books.map(newBook => {
@@ -52,6 +58,7 @@ export default function BookList() {
           })}
         </Grid.Row>
       </Grid>
+      </ListDiv>
     </SemanticContainer>
   
   );

@@ -2,11 +2,10 @@ import React from "react";
 import { Menu, Icon, } from "semantic-ui-react";
 import { NavLink, } from "react-router-dom";
 import BookList from "./BookList";
-import FormikSearchForm from "./SearchForm";
 import StartPage from './StartPage';
 import styled from 'styled-components';
-import FormikSignUpForm from './SignupForm'
-import Register from './Register'
+import Login from './LoginForm';
+import Register from './Register';
 
 
 const NavBar = styled.div`
@@ -24,15 +23,15 @@ export default function TabNav(){
             <div>Home</div>
         </Menu.Item>
         <Menu.Item name = 'booklist' as={NavLink} to='/booklist' active={BookList}>
-            <Icon name= 'users' />
-            <div>Sample Books</div>
-        </Menu.Item>
-        <Menu.Item name = 'search' as={NavLink} to='/searchform' active={FormikSearchForm}>
             <Icon name = 'book' />
-            <div>Find Books</div>
+            <div>Some Books</div>
+        </Menu.Item>
+        <Menu.Item name ='login' as={NavLink} to='/login' active={Login}>
+            <Icon name= 'sign-in' />
+            <div>Login</div>
         </Menu.Item>
         <Menu.Item name = 'register' as={NavLink} to= '/register' active ={Register}>
-            <Icon name = 'register' />
+            <Icon name = 'signup' />
             <div>Register</div>
         </Menu.Item>
         

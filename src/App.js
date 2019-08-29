@@ -8,24 +8,32 @@ import styled from 'styled-components';
 // import FormikSignUpForm from "./components/SignupForm";
 import FormikLoginForm from './components/LoginForm';
 import Register from "./components/Register";
-import Login from './components/LoginForm'
+import Login from './components/LoginForm';
 
-const AppDiv = styled.main`
+const AppMain = styled.main`
+background-color: #f9f7f4;
+width: 75%;
+display: flex;
+flex-direction: column;
+justify-self: center;
+
+`;
+
+const AppDiv = styled.div`
 background-color: #f9f7f4;
 `;
 
 
 export default function App() {
   return (
-    <main>
+    <AppMain>
       <TabNav />
       <AppDiv>
       <Route exact path = '/' component = {StartPage} />
       <Route exact path = '/booklist' component = {BookList}/>
-      <Route exact path = '/searchform' component = {FormikSearchForm} />
       <Route exact path = '/register' render = {props => <Register {...props} />} />
       <Route exact path = '/login' render = {props => <Login {...props} />} />
       </AppDiv>
-    </main>
+    </AppMain>
   );
 }

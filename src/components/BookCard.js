@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const CardDiv = styled.div`
 
-// border: 1px solid black;
+border-radius: 25% 10%;
 
 margin: 10px;
 `;
